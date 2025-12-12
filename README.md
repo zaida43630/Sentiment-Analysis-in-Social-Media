@@ -1,136 +1,51 @@
-Political Sentiment Analysis in Social Media
-
-📌 Project Overview
-
-This project implements a machine learning pipeline to analyze public political sentiment on social media. By leveraging Natural Language Processing (NLP) techniques, the system automates the classification of YouTube comments into three distinct categories: Pro-Government, Anti-Government, and Neutral.
-
-The tool is designed to monitor public opinion trends effectively, providing a scalable alternative to traditional surveys and polls. It achieves a classification accuracy of 94% using Logistic Regression and TF-IDF vectorization.
-
-🎯 Objectives
-
-Automate Sentiment Analysis: Classify unstructured user-generated content into political sentiment categories.
-
-Data Pipeline: Build a robust pipeline for collecting, cleaning, and preprocessing text data.
-
-Trend Identification: Quantify public support or opposition towards government policies.
-
-High Performance: Deliver accurate predictions even with colloquial or noisy social media text.
-
-🛠️ Tech Stack
-
-Language: Python
-
-Machine Learning: scikit-learn (Logistic Regression, Model Evaluation)
-
-NLP: NLTK (Tokenization, Stopwords, Lemmatization)
-
-Data Handling: Pandas, NumPy
-
-Visualization: Matplotlib, Seaborn
-
-Data Collection: youtube_comment_downloader
-
-Utilities: google_trans (for translating regional comments to English)
-
-📊 Dataset Details
-
-The dataset was constructed specifically for this project by scraping comments from political influencer videos on YouTube.
-
-Total Samples: 1,664 comments
-
-Class Distribution:
-
-1 Pro-Government: 895 comments (Most frequent)
-
--1 Anti-Government: 449 comments
-
-0 Neutral: 318 comments
-
-Labeling: Manual annotation based on expressed sentiment.
-
-⚙️ Methodology
-
-The project follows a standard supervised learning workflow:
-
-Data Collection: Comments are scraped from relevant YouTube videos using youtube_comment_downloader.
-
-Translation: Non-English comments are translated to English using google_trans to ensure uniformity.
-
-Preprocessing:
-
-Lowercasing text
-
-Removing URLs, punctuation, and special characters
-
-Tokenization and Stopword removal
-
-Lemmatization (reducing words to their base form)
-
-Feature Extraction: Text is converted into numerical vectors using TF-IDF (Term Frequency-Inverse Document Frequency) to highlight unique, significant words.
-
-Model Training: A Logistic Regression classifier is trained on the vectorized data.
-
-📈 Results & Performance
-
-The model demonstrates robust performance across all sentiment classes, with particularly high recall for the majority class.
-
-Metric
-
-Score
-
-Accuracy
-
-94%
-
-Macro F1-Score
-
-0.94
-
-Pro-Gov Recall
-
-98%
-
-Anti-Gov Recall
-
-93%
-
-Key Insight: The model effectively captures the dominant sentiment (Pro-Government) while maintaining high precision for Anti-Government comments, rarely misclassifying them.
-
-🚀 Installation & Usage
-
-Clone the repository:
-
-git clone [https://github.com/yourusername/political-sentiment-analysis.git](https://github.com/yourusername/political-sentiment-analysis.git)
-cd political-sentiment-analysis
-
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Run the analysis:
-(Replace main.py with your actual script name)
-
-python main.py
-
-
-🔮 Future Scope
-
-Real-Time Dashboard: Develop a live web interface for monitoring sentiment changes over time.
-
-Multilingual NLP: Implement native processing for regional languages to remove the dependency on translation.
-
-Emotion Detection: Expand the model to detect specific emotions (anger, joy, sarcasm) rather than just polarity.
-
-Aspect-Based Analysis: Granular analysis of sentiment towards specific topics (e.g., economy, foreign policy).
-
-👥 Author
-
-Mohd Zaid
-
-Department of Computer Science & Engineering
-
-🙏 Acknowledgements
-
-Special thanks to Dr. Apurbalal Senapati for his guidance and supervision throughout this project.
+# Political Sentiment Analysis in Social Media
+
+## 📌 Project Overview
+This project aims to automate the analysis of public opinion trends by classifying YouTube comments into political sentiment categories. [cite_start]Using Natural Language Processing (NLP) and Machine Learning techniques, the system interprets user-generated content to gauge public sentiment towards the government.
+
+## 🎯 Objectives
+- [cite_start]**Sentiment Classification:** Categorize comments into **Pro-Government**, **Anti-Government**, or **Neutral**.
+- **Data Processing:** Collect, clean, and preprocess raw user-generated text.
+- [cite_start]**Trend Analysis:** Identify public opinion trends regarding government policies.
+
+## 📊 Dataset
+- [cite_start]**Source:** Comments collected from videos of prominent political influencers on YouTube.
+- [cite_start]**Size:** 1,664 comments.
+- **Labeling:** Manually labeled into three classes:
+  - [cite_start]`1`: Pro-Government (895 comments) 
+  - [cite_start]`-1`: Anti-Government (449 comments) 
+  - [cite_start]`0`: Neutral (318 comments) 
+
+## 🛠️ Tech Stack & Tools
+- [cite_start]**Language:** Python 
+- **Libraries:**
+  - [cite_start]`scikit-learn` (Model building) 
+  - [cite_start]`NLTK` (Natural Language Processing) 
+  - [cite_start]`Pandas` (Data manipulation) 
+  - [cite_start]`Matplotlib` / `Seaborn` (Data visualization) 
+  - [cite_start]`youtube_comment_downloader` (Data collection) 
+  - [cite_start]`google_trans` (Language translation) 
+
+## ⚙️ Methodology
+1.  **Data Collection:** Scraped comments from relevant political videos.
+2.  [cite_start]**Translation:** Translated regional language comments to English for standardization.
+3.  [cite_start]**Preprocessing:** Removed URLs, punctuation, and stopwords; applied lemmatization.
+4.  [cite_start]**Feature Extraction:** Used **TF-IDF** (Term Frequency-Inverse Document Frequency) to convert text into numerical vectors.
+5.  [cite_start]**Model Training:** Trained a **Logistic Regression** classifier on the processed data.
+
+## 📈 Results
+The model achieved robust performance across all sentiment classes:
+- [cite_start]**Accuracy:** **94%** 
+- [cite_start]**Macro F1-Score:** 0.94 
+- [cite_start]**Key Observation:** The model showed high recall (98%) for pro-government comments, effectively capturing the dominant sentiment in the dataset.
+
+## 🚀 Future Scope
+- [cite_start]**Multilingual Support:** Native processing of regional languages without translation.
+- [cite_start]**Real-Time Dashboard:** A visual interface for monitoring live sentiment trends.
+- [cite_start]**Emotion Detection:** Extending analysis to detect specific emotions like anger, joy, or sarcasm.
+
+## 👥 Author
+- [cite_start]**Mohd Zaid** 
+
+## 🙏 Acknowledgements
+Special thanks to **Dr. [cite_start]Apurbalal Senapati** for guidance and support throughout this project.
